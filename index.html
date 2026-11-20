@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MediScan – Human Disease Detector</title>
+  <meta name="description" content="Educational symptom checker that suggests possible conditions from selected symptoms." />
+  <meta name="author" content="Ahmad Wahab" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <div class="logo">⚕ MediScan</div>
+      <h1>Human Disease Detector</h1>
+      <p>Select the symptoms you have and get a ranked list of possible conditions, self-care tips, and guidance on when to see a doctor.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="disclaimer" role="note">
+      <strong>Educational use only.</strong> This tool does not diagnose disease and is not a substitute for professional medical advice. If you feel seriously unwell, contact a doctor or emergency services.
+    </div>
+
+    <section class="card" aria-labelledby="s1">
+      <h2 id="s1">1. About you <span class="opt">(optional)</span></h2>
+      <div class="grid3">
+        <label>Age
+          <input type="number" id="age" min="0" max="120" placeholder="e.g. 21" />
+        </label>
+        <label>Sex
+          <select id="sex">
+            <option value="">Prefer not to say</option>
+            <option>Male</option>
+            <option>Female</option>
+          </select>
+        </label>
+        <label>Symptoms started
+          <select id="duration">
+            <option value="">Not sure</option>
+            <option>Today</option>
+            <option>1–3 days ago</option>
+            <option>4–7 days ago</option>
+            <option>More than a week ago</option>
+          </select>
+        </label>
+      </div>
+    </section>
+
+    <section class="card" aria-labelledby="s2">
+      <h2 id="s2">2. Choose your symptoms</h2>
+      <input type="search" id="search" placeholder="Search symptoms (e.g. fever, rash)…" aria-label="Search symptoms" />
+      <div id="symptomList"></div>
+      <div class="bar">
+        <span id="count">0 selected</span>
+        <div>
+          <button class="btn ghost" id="clearBtn" type="button">Clear</button>
+          <button class="btn" id="analyzeBtn" type="button">Analyze symptoms</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="results" class="card hidden" aria-live="polite"></section>
+  </main>
+
+  <footer>
+    <p>Designed &amp; developed by <strong>Ahmad Wahab</strong> · BSCS, University of Central Punjab (UCP)</p>
+    <p class="small">Rule-based educational project. Not medical advice.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
